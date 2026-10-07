@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{42} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Business coverage logging: test classes emit [业务模块]/[用例]/[结果] lines -->
+    <logger name="com.github.lechandonga.metricsalertpipelinejava.tests" level="INFO"/>
+    <logger name="com.github.lechandonga.metricsalertpipelinejava.service" level="WARN"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
